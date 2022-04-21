@@ -1,10 +1,9 @@
 defmodule Hangman.Impl.Game do
- 
- @type state :: :initializing | :won | :lost | :good_guess | :bad_guess | :already_used
+ alias Hangman.Type
 
  @type t :: %__MODULE__{
     turns_left: integer,
-    game_state: state,
+    game_state: Type.state,
     letters: list(String.t),
     used: Mapset.t(String.t),
  }
