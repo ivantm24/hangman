@@ -13,11 +13,13 @@ defmodule Hangman.Impl.Game do
    letters: [],
    used: MapSet.new(),
  )
-
+ 
+ @spec new_game() :: t
  def new_game do
    new_game(Dictionary.random_word)
  end
 
+ @spec new_game(String.t) :: t
  def new_game(word) do
    %__MODULE__{
       letters: word |> String.codepoints
