@@ -4,7 +4,7 @@ defmodule HangmanImplGameTest do
 
  test "new game returns structure" do
   game = Game.new_game
-  
+
   assert game.turns_left == 7
   assert game.game_state == :initializing
   assert length(game.letters) > 0
@@ -12,7 +12,7 @@ defmodule HangmanImplGameTest do
 
  test "new game returns correct word" do
   game = Game.new_game("wombat")
-  
+
   assert game.turns_left == 7
   assert game.game_state == :initializing
   assert game.letters == ["w", "o", "m", "b", "a", "t"]
@@ -100,7 +100,7 @@ defmodule HangmanImplGameTest do
    [ "f",    :bad_guess, 2,    ["_", "e", "_", "_", "_"], [ "a", "b", "c", "d", "e", "f" ] ],
    [ "g",    :bad_guess, 1,    ["_", "e", "_", "_", "_"], [ "a", "b", "c", "d", "e", "f", "g" ] ],
    [ "h",    :good_guess,1,    ["h", "e", "_", "_", "_"], [ "a", "b", "c", "d", "e", "f", "g", "h" ] ],
-   [ "i",    :lost,      0,    ["h", "e", "_", "_", "_"], [ "a", "b", "c", "d", "e", "f", "g", "h", "i" ] ],
+   [ "i",    :lost,      0,    ["h", "e", "l", "l", "o"], [ "a", "b", "c", "d", "e", "f", "g", "h", "i" ] ],
   ]
   |> test_sequence_of_moves()
  end
